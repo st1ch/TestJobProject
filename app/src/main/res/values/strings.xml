@@ -1,3 +1,19 @@
 <resources>
   <string name="app_name">TestJobProject</string>
+
+  <!-- Layout strings -->
+  <string name="btn_text">Click me</string>
+  <string name="okay">Ok</string>
+  <string name="cars_count_hint">Enter cars count</string>
+  <string name="planes_count_hint">Enter planes count</string>
+  <string name="ships_count_hint">Enter ships count</string>
+  <string name="placeholder_empty_list">Sorry, there is no data</string>
+
+  <!-- Sort types -->
+  <string name="bubble_sort">Bubble Sort</string>
+  <string name="quick_sort">Quick Sort</string>
+  <string name="insertion_sort">Insertion Sort</string>
+  <string name="format_speed">High speed: %1$d mPh</string>
+  <string name="format_type">Type: %1$s</string>
+
 </resources>
