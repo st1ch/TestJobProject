@@ -14,19 +14,18 @@ public class InsertSort extends BaseSortedClass {
   }
 
   @Override public <T extends Mechanizm> List<T> sort(List<T> mechanizmList) {
-    Mechanizm[] arr = (Mechanizm[]) mechanizmList.toArray();
-    Mechanizm temp;
+    T temp;
     int j;
-    for (int i = 0; i < arr.length - 1; i++) {
-      if (arr[i].compareTo(arr[i + 1]) > 0) {
-        temp = arr[i + 1];
-        arr[i + 1] = arr[i];
+    for (int i = 0; i < mechanizmList.size() - 1; i++) {
+      if (mechanizmList.get(i).compareTo(mechanizmList.get(i + 1)) > 0) {
+        temp = mechanizmList.get(i + 1);
+        mechanizmList.set(i + 1, mechanizmList.get(i));
         j = i;
-        while (j > 0 && 0 < temp.compareTo(arr[j - 1])) {
-          arr[j] = arr[j - 1];
+        while (j > 0 && 0 < temp.compareTo(mechanizmList.get(j - 1))) {
+          mechanizmList.set(j, mechanizmList.get(j - 1));
           j--;
         }
-        arr[j] = temp;
+        mechanizmList.set(j, temp);
       }
     }
     return mechanizmList;

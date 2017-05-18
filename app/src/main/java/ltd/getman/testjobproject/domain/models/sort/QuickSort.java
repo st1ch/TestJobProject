@@ -18,35 +18,34 @@ public class QuickSort extends BaseSortedClass {
   }
 
   @Override public <T extends Mechanizm> List<T> sort(List<T> mechanizmList) {
-    Mechanizm[] array = (Mechanizm[]) mechanizmList.toArray();
-    qsort(array, 0, array.length - 1);
+    qsort(mechanizmList, 0, mechanizmList.size() - 1);
     return mechanizmList;
   }
 
-  private void qsort(Mechanizm[] array, int begin, int end) {
+  private <T extends Mechanizm> void qsort(List<T> mechanizmList, int begin, int end) {
     if (end > begin) {
-      int index = partition(array, begin, end);
-      qsort(array, begin, index - 1);
-      qsort(array, index + 1, end);
+      int index = partition(mechanizmList, begin, end);
+      qsort(mechanizmList, begin, index - 1);
+      qsort(mechanizmList, index + 1, end);
     }
   }
 
-  private int partition(Mechanizm[] array, int begin, int end) {
+  private <T extends Mechanizm> int partition(List<T> mechanizmList, int begin, int end) {
     int index = begin + RND.nextInt(end - begin + 1);
-    Mechanizm pivot = array[index];
-    swap(array, index, end);
+    Mechanizm pivot = mechanizmList.get(index);
+    swap(mechanizmList, index, end);
     for (int i = index = begin; i < end; ++i) {
-      if (array[i].compareTo(pivot) <= 0) {
-        swap(array, index++, i);
+      if (mechanizmList.get(i).compareTo(pivot) <= 0) {
+        swap(mechanizmList, index++, i);
       }
     }
-    swap(array, index, end);
+    swap(mechanizmList, index, end);
     return (index);
   }
 
-  private void swap(Mechanizm[] array, int i, int j) {
-    Mechanizm tmp = array[i];
-    array[i] = array[j];
-    array[j] = tmp;
+  private <T extends Mechanizm> void swap(List<T> mechanizmList, int i, int j) {
+    T tmp = mechanizmList.get(i);
+    mechanizmList.set(i, mechanizmList.get(j));
+    mechanizmList.set(j, tmp);
   }
 }
