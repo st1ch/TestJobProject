@@ -5,7 +5,6 @@ import javax.inject.Singleton;
 import ltd.getman.testjobproject.di.modules.ApplicationModule;
 import ltd.getman.testjobproject.di.modules.MechanizmModule;
 import ltd.getman.testjobproject.presentation.activities.MainActivity;
-import ltd.getman.testjobproject.presentation.services.SortService;
 
 /**
  * Created by Artem Getman on 17.05.17.
@@ -13,8 +12,5 @@ import ltd.getman.testjobproject.presentation.services.SortService;
  */
 @Singleton @Component(modules = { ApplicationModule.class, MechanizmModule.class })
 public interface ApplicationComponent {
-
   void inject(MainActivity mainActivity);
-
-  void inject(SortService sortService);
 }
